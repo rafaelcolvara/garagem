@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:w3="http://www.w3.org/1999/xhtml"
+      xmlns:j="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <div class="container">
+        <j:include src="../../head.xhtml"/>
+        <ul class="nav nav-tabs">
+            <h:form>
+            <li role="presentation" class="active"><a href="ListaCidades">Listar Cidades</a></li>
+            <li role="presentation" class="active"><h:commandLink action="#{cidadeManagedBean.gotoCadastrarCidade()}" value="Cadastrar Cidade"/></li>
+            </h:form>
+        </ul>
+        <body>
+            <h1 class="jumbotron">Lista de Cidades</h1>
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Estado</th>                   
+                    <th>Ações</th>
+                </tr>
+                <j:repeat  value="#{cidadeManagedBean.listaCidade}"   var="c" >
+                    <tr>
+                        <td>#{c.nomecidade}</td>
+                        <td>#{c.estado}</td>
+
+                        <td>
+                            <h:form>
+                               <h:commandButton class="btn btn-warning" action="#{cidadeManagedBean.delete()}" value="Delete">
+                                    <f:setPropertyActionListener target="#{cidadeManagedBean.actualCity}" value="#{c}"/>
+                                </h:commandButton>
+                                <h:commandButton class="btn btn-danger" action="#{cidadeManagedBean.gotoEditCity()}" value="Edit">
+                                    <f:setPropertyActionListener target="#{cidadeManagedBean.actualCity}" value="#{c}"/>
+                                </h:commandButton>
+                            </h:form>
+
+                        </td>
+                    </tr>
+                </j:repeat>
+
+            </table>
+        </body>
+    </div>
+
+</html>

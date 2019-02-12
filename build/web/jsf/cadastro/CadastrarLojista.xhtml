@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:j="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:pf="http://primefaces.org/ui"
+      >
+
+
+    <j:include src="../../head.xhtml"/>
+    <script src="/js/MascaraValidacao.js" type="text/javascript"></script>
+    <body>
+        <div class="container">            
+            <h1 class="jumbotron">Cadastrar Lojista</h1>
+            <h:form>
+                <div class="form-group">
+                    <h:inputText class="form-control"  id="nomeloja" converter="upperCaseConverter"  p:placeholder="Digite o nome da loja" value="#{lojistaManagedBean.actualLojista.nome}" style="text-transform:uppercase">
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="nomecontato" converter="upperCaseConverter"  p:placeholder="Digite o nome psta contato" value="#{lojistaManagedBean.actualLojista.nomeContato}" style="text-transform:uppercase">
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="cep" converter="cepConverter"  p:placeholder="Digite o cep" value="#{lojistaManagedBean.actualLojista.cep}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="dddtelefone"  p:placeholder="DDD Telefone" value="#{lojistaManagedBean.actualLojista.dddtelefone}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>    
+                    <pf:inputMask class='form-control' id="taxId" value="" mask="(99)-9999999"/>
+                    <h:inputText class="form-control"  id="telefone"  p:placeholder="Telefone" value="#{lojistaManagedBean.actualLojista.telefone}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="cidade"  p:placeholder="Cidade" value="#{lojistaManagedBean.actualLojista.cidadeIdcidade}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="endereco"  p:placeholder="Endereço" value="#{lojistaManagedBean.actualLojista.endereco}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="complemento"  p:placeholder="Complemento" value="#{lojistaManagedBean.actualLojista.complemento}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:inputText class="form-control"  id="site"  p:placeholder="http://" value="#{lojistaManagedBean.actualLojista.site}" >
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                </div>
+                
+               
+            </h:form>
+        </div>
+    </body>
+</html>

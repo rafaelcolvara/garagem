@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" >
+
+
+    <h:head>
+        <ui:include src="../../head.xhtml"/>
+        <script name="/resources/js/jquery.js" library="primefaces"></script>
+
+        <title>..:: PORTAL DO LOJISTA ::..</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+            .ui-stack {
+                z-index: 1000;
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3 navside">
+                    <h3 style="color: #fff;">Menu da garagem</h3>
+                    <h:form>  
+
+                        <h:commandButton class="btn btn-primary" style="width:100% " value="Lojistas" action="#{menuBean.loadLojista()}"/>
+
+                        <h:commandButton class="btn btn-primary" style="width:100%" value="Cidade" action="#{cidadeManagedBean.gotoCadastrarCidade()}"/>
+
+                    </h:form>
+                </div>
+                <div class="col-md-9">
+                    <h1 class="jumbotron alert-info">Garagem do rafael</h1>
+                    <p>
+                        Mussum Ipsum, cacilds vidis litro abertis. Interagi no mé, cursus quis, vehicula ac nisi. Detraxit consequat et quo num tendi nada. Viva Forevis aptent taciti sociosqu ad litora torquent. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.
+
+                        Atirei o pau no gatis, per gatis num morreus. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Manduma pindureta quium dia nois paga. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+
+                        Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+
+                        Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. In elementis mé pra quem é amistosis quis leo. Cevadis im ampola pa arma uma pindureta.  Pra lá , depois divoltis porris, paradis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </h:body>   
+</html>

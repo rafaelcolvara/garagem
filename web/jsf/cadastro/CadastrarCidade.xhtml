@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:j="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough" >
+
+
+    <j:include src="../../head.xhtml"/>
+
+    <body>
+        <div class="container">            
+            <h1 class="jumbotron">Cadastrar cidade</h1>
+            <h:form>
+                <div class="form-group">
+                    <h:inputText class="form-control" converter="upperCaseConverter"  p:placeholder="Digite o nome da cidade" value="#{cidadeManagedBean.actualCity.nomecidade}" style="text-transform:uppercase">
+                        <f:ajax event="blur" render="@this" />
+                    </h:inputText>
+                    <h:selectOneMenu value="#{cidadeManagedBean.actualUf}">
+                        <f:selectItems value="#{cidadeManagedBean.listaUf}"/>   
+                        <f:converter converterId="ConverterUf"/>
+                    </h:selectOneMenu>
+                </div>
+                <h:commandButton action="#{cidadeManagedBean.createCidade()}" value="Cadatrar"/>
+            </h:form>
+        </div>
+    </body>
+</html>

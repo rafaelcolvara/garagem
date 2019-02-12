@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:j="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:b="http://java.sun.com/jsf/core">
+      
+
+    <j:include src="../../head.xhtml"/>
+
+    <body>
+        <div class="container">
+            <h1 class="jumbotron">Atualizar cidade</h1>
+            <h:form>
+                <div class="form-group">
+                    <h:inputText class="form-control"  value="#{cidadeManagedBean.actualCity.nomecidade}" style="text-transform:uppercase"/>
+                    <h:selectOneMenu value="#{cidadeManagedBean.actualUf}">
+                        <b:selectItems value="#{cidadeManagedBean.listaUf}"/>   
+                        <b:converter converterId="ConverterUf"/>
+                    </h:selectOneMenu>
+                </div>
+                <h:commandButton action="#{cidadeManagedBean.editarCidade()}" value="Cadatrar"/>
+            </h:form>
+        </div>
+    </body>
+</html>
